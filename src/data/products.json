@@ -1,0 +1,21 @@
+[
+    {
+      "id": "1",
+      "name": "iPhone 15",
+      "description": "Latest Apple smartphone with A17 Bionic chip",
+      "price": 1200
+    },
+    {
+      "id": "2",
+      "name": "MacBook Pro",
+      "description": "Powerful laptop for developers and creators",
+      "price": 2500
+    },
+    {
+      "id": "3",
+      "name": "AirPods Pro",
+      "description": "Wireless earbuds with noise cancellation",
+      "price": 300
+    }
+  ]
+  
