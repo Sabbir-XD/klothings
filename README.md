@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Klothing 🛍️
 
-## Getting Started
+A modern **Next.js 15 + MongoDB** powered e-commerce platform.  
+This project demonstrates **product listing, product details, and authentication** using **NextAuth**, styled with **TailwindCSS + DaisyUI**.
 
-First, run the development server:
+🌐 **Live Demo**: [https://klothing-demo.vercel.app](https://klothing-demo.vercel.app)
 
+---
+
+## 🚀 Features
+- Next.js 15 App Router (React 19, Server Components)
+- MongoDB with Mongoose ORM
+- Authentication with NextAuth.js
+- TailwindCSS v4 + DaisyUI for UI
+- Dynamic product listing & details page
+- API routes for CRUD operations
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1. Clone the repository
 ```bash
+git clone https://github.com/your-username/klothing.git
+cd klothing
+
+npm install
+
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/klothing
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm start ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📂 Route Summary
+Route	Method	Description
+/	GET	Home page
+/products	GET	Product listing page
+/products/[id]	GET	Single product details page
+/api/products	GET	Fetch all products from MongoDB
+/api/products	POST	Add a new product
+/api/auth/[...nextauth]	ALL	NextAuth authentication handler
 
-## Learn More
+📦 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+Next.js 15 (with Turbopack)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+React 19
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MongoDB + Mongoose
 
-## Deploy on Vercel
+NextAuth.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+TailwindCSS 4 + DaisyUI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+📊 Database ERD (Simple)
++-----------------+
+|   Product       |
++-----------------+
+| _id             |
+| name            |
+| price           |
+| description     |
+| createdAt       |
+| updatedAt       |
++-----------------+
+
+
+👨‍💻 Author
+
+Built with ❤️ by [SABBIR HOSSAIN]
+🌐 Live Demo: https://klothing-demo.vercel.app
