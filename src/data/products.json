@@ -16,6 +16,18 @@
       "name": "AirPods Pro",
       "description": "Wireless earbuds with noise cancellation",
       "price": 300
+    },
+    {
+      "id": "4",
+      "name": "Google Pixel 6",
+      "description": "Affordable smartphone from Google",
+      "price": 800
+    },
+    {
+      "id": "5",
+      "name": "Samsung Galaxy S21",
+      "description": "Flagship smartphone from Samsung",
+      "price": 1500
     }
   ]
   

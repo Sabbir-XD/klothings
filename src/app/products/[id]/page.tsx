@@ -1,15 +1,25 @@
-import products from "@/data/products.json";
+import Product from "@/models/Product";
+import { connectDB } from "@/lib/mongodb";
 
-export default function ProductDetails({ params }: { params: { id: string } }) {
-  const product = products.find(p => p.id === params.id);
+interface Props {
+  params: { id: string };
+}
+
+export default async function ProductDetails({ params }: Props) {
+  const { id } = params; // server component: direct access is fine
+  await connectDB();
+
+  const product = await Product.findById(id).lean();
 
   if (!product) return <p>Product not found</p>;
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
+    <div className="p-6 max-w-xl mx-auto bg-base-200 rounded-lg shadow-lg md:h-screen">
+      <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+      <p className="text-gray-700 mb-2"><strong>Description:</strong> {product.description}</p>
+      <p className="text-gray-700 mb-2"><strong>Price:</strong> ${product.price}</p>
+      <p className="text-gray-500 mb-1"><strong>Created At:</strong> {new Date(product.createdAt).toLocaleString()}</p>
+      <p className="text-gray-500"><strong>Updated At:</strong> {new Date(product.updatedAt).toLocaleString()}</p>
     </div>
   );
 }
